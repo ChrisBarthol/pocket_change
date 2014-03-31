@@ -17,6 +17,8 @@
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>  <!--debug box-->
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     </div>
   </body>
 </html>
