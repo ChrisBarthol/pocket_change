@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-PocketChange::Application.config.secret_key_base = '2e2639384c62b6770de78f90b88465da62e990b0c6f9bb431a4a4dcd09c2503fca7916aa48b93ef2a4c01bd286bfd24d7ca4b45d4a311a25d005ced01325a2b1'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+PocketChange::Application.config.secret_key_base = secure_token
