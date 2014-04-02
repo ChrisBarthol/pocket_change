@@ -2,6 +2,17 @@ class DonationsController < ApplicationController
 
   def new
     @donation = Donation.new
+    @user = current_user
+    @charities = Charity.all
+
+    @donation.user_id = @user.id
+    @donation.amount = "0.1"  #hardcoded swipe amount
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @charities }
+    end
+
   end
 
   #show probably not needed
@@ -13,6 +24,10 @@ class DonationsController < ApplicationController
   end
 
   def create
+    @donation = Donation.new(donation_params)
+    if @donation.save
+      redirect_to new
+    end
   end
 
   private
