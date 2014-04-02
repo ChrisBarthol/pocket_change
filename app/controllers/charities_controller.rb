@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class CharitiesController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :configure_devise_params, if: :devise_controller?
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @charity = Charity.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
+  def charity_params
     params.required(:user).permit(:password, :password_confirmation, :id)
   end
 end

@@ -4,5 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   USER_REGEX = /\A[-\w]+\Z/i
+   #Name must contain at least 1 letter (a-zA-Z) and may not contain
+   #anything other than digits, letters, or underscores
+   USER_REGEX = /\A[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*\z/
+
+   validates :name, presence: true
 end
