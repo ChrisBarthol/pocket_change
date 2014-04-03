@@ -10,7 +10,7 @@
 				<%= link_to "Skip", new_donation_path %>
 			</h5>
 			<h5 class="donate">
-				<%= form_for(@donation) do |f| %>
+				<%= form_for(@donation, remote: true) do |f| %>
 				<div><%= f.hidden_field :charity_id, :value => charity.id %></div>
 					<%= f.submit "Donate" %>
 				<% end %>

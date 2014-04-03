@@ -25,8 +25,8 @@ class DonationsController < ApplicationController
     @donation.amount = "0.1"
     if @donation.save
       respond_to do |format|
-        format.html {redirect_to new_donation_path, :flash => {notice: "Thank you for donating!" }}
-        format.json
+        #format.html {redirect_to new_donation_path, :flash => {notice: "Thank you for donating!" }}
+        format.js
       end
     else
       redirect_to root_url,:flash => {alert: "Error" }

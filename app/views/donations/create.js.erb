@@ -1,1 +1,7 @@
-<%= escape_javascript(render('donation/new')) %>
+
+		var orgs = $('.org');
+		var animateDirection = {"left" : '100%', "opacity": -.5};
+		var escape =5
+		orgs.eq(0).animate(animateDirection,1000, function(){
+			location.reload();
+		});
