@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
    USER_REGEX = /\A[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*\z/
 
    validates :name, presence: true
+
+   has_many :donations
 end

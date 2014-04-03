@@ -12,6 +12,8 @@ html {
 
 body {
   padding-top: 60px;
+  height: 100%;
+  margin: 0;
 }
 
 section {
@@ -221,4 +223,62 @@ ul.ui-autocomplete {
 
 .border {
   border-bottom: 2px solid;
+}
+
+
+#org-holder {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: #7B6C97;
+}
+
+.org {
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.org-container {
+  margin: 2.5%;
+  position: relative;
+  height: 95%;
+  box-sizing: border-box;
+  padding: 4%;
+  border-radius: 6px;
+  background: #ffffff;
+  -moz-box-sizing: border-box;
+  border: 1px solid #666;
+  box-shadow: 0px 0px 10px #333;
+  -webkit-transition: box-shadow .2s; /* For Safari 3.1 to 6.0 */
+  transition: box-shadow .2s;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 92%;
+  height: 2em;
+}
+
+.skip, .donate {
+  margin: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.skip {
+  left: 0;
+}
+
+.donate {
+  right: 0;
+}
+
+.donations {
+  margin: 0 auto;
+  text-align: center;
 }

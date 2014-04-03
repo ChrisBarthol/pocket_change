@@ -1,6 +1,20 @@
-<li>
-
-  <%= charity.name %>
-  <%= charity.mission %>
-
-</li>
+<div class="org" data-oid="<%= charity.id %>">
+	<div class="org-container">
+		<div class="org-caption">
+			<h3><%= charity.name %></h3>
+			<p><%= charity.mission %></p>
+			Visit Site:<%= link_to charity.website, url_for(charity.website) %>
+		</div>
+		<div class="bottom">
+			<h5 class="skip">
+				<%= link_to "Skip", new_donation_path %>
+			</h5>
+			<h5 class="donate">
+				donate
+			</h5>
+			<h5 class="donations">
+				Donations: 0
+			</h5>
+		</div>
+	</div>
+</div>

@@ -3,7 +3,7 @@ class DonationsController < ApplicationController
   def new
     @donation = Donation.new
     @user = current_user
-    @charities = Charity.all
+    @charities = Charity.order("RANDOM()").first
 
     @donation.user_id = @user.id
     @donation.amount = "0.1"  #hardcoded swipe amount
