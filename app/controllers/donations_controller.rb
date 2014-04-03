@@ -6,7 +6,7 @@ class DonationsController < ApplicationController
     @charities = Charity.order("RANDOM()").first
     respond_to do |format|
       format.html
-      format.json { render :json => @charities }
+      #format.json { render :json => @charities }
     end
 
   end

@@ -1,3 +1,4 @@
 <div id="org-holder">
-<%= render @charities %>
+	<!-- change object: to collect: if sending in multiple charities-->
+<%= render partial: "donations/newdonation", object: @charities, as: :charity %>
 </div>
