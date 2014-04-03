@@ -4,10 +4,6 @@ class DonationsController < ApplicationController
     @donation = Donation.new
     @user = current_user
     @charities = Charity.order("RANDOM()").first
-
-    @donation.user_id = @user.id
-    @donation.amount = "0.1"  #hardcoded swipe amount
-
     respond_to do |format|
       format.html
       format.json { render :json => @charities }
@@ -25,8 +21,15 @@ class DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(donation_params)
+    @donation.user_id = current_user.id
+    @donation.amount = "0.1"
     if @donation.save
-      redirect_to new
+      respond_to do |format|
+        format.html {redirect_to new_donation_path, :flash => {notice: "Thank you for donating!" }}
+        format.json
+      end
+    else
+      redirect_to root_url,:flash => {alert: "Error" }
     end
   end
 
