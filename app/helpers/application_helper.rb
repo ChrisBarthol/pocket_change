@@ -9,7 +9,4 @@ module ApplicationHelper
 	    end
   	end
 
-  	def user_auth
-  		authenticate_user! || authenticate_charity!
-  	end
 end

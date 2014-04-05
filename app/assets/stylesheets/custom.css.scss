@@ -232,6 +232,7 @@ ul.ui-autocomplete {
   overflow: hidden;
   background: #7B6C97;
   position: absolute;
+  top: 0;
 }
 
 .org {
@@ -239,6 +240,7 @@ ul.ui-autocomplete {
   height: 100%;
   float: left;
   position: absolute;
+  padding: 40px 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }

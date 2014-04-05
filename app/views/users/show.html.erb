@@ -1,13 +1,21 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
-  <aside class="span4">
+  <aside>
     <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <%= @user.email %>
-        <%= render @user.donations %>
-      </h1>
+    	<div class="container">
+	      <h1>
+	        <%= gravatar_for @user %>
+	        <%= @user.name %>
+	        <div><%= @user.email %></div>
+	      </h1>
+  		</div>
     </section>
   </aside>
+  <div class="clearfix visible-xs"></div>
+
+  
+</div>
+<div class="container">
+	<%= render @user.donations %>
 </div>
