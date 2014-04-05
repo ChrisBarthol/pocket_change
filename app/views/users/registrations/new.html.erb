@@ -1,17 +1,12 @@
-<h1>Sign Up</h1>
+<h2>Sign up</h2>
 
 <div class ="row">
 	<div class="span6 offset3 center">
-
-
 		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		  <%= devise_error_messages! %>
 
-		  <div><%= f.label :name %><br />
-		  <%= f.text_field :name %></div>
-
 		  <div><%= f.label :email %><br />
-		  <%= f.email_field :email %></div>
+		  <%= f.email_field :email, autofocus: true %></div>
 
 		  <div><%= f.label :password %><br />
 		    <%= f.password_field :password, autocomplete: "off" %></div>
@@ -23,6 +18,5 @@
 		<% end %>
 
 		<%= render "devise/shared/links" %>
-
 	</div>
 </div>

@@ -1,9 +1,11 @@
 class DonationsController < ApplicationController
+  before_filter :authenticate_user!
 
   def new
     @donation = Donation.new
     @user = current_user
     @charities = Charity.order("RANDOM()").first
+    @donationcount = Donation.where(charity_id: @charities.id).count
     respond_to do |format|
       format.html
       #format.json { render :json => @charities }

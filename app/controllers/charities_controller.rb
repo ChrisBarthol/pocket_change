@@ -1,6 +1,6 @@
 class CharitiesController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :user_auth
   before_filter :configure_devise_params, if: :devise_controller?
   
   def configure_devise_params

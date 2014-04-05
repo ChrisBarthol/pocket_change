@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :user_auth
   before_filter :configure_devise_params, if: :devise_controller?
-  
+
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:name, :email, :password, :password_confirmation, :admin)
