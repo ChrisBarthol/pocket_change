@@ -1,7 +1,24 @@
 		var test =5;
 		var orgs = $('.org');
 		var animateDirection = {"left" : '100%', "opacity": -.5};
+		var reverse = {"left": '-200%', "opacity": .5};
 		var escape =5
 		orgs.eq(0).animate(animateDirection,1000, function(){
+			// var orgsUrl = '/donations/new'
+			// $.ajax({
+			// 	type: 'GET',
+			// 	dataType: 'json',
+			// 	url: orgsUrl,
+			// 	success: function(data) {
+			// 		event.preventDefault();
+			// 		$('.org-caption').replaceWith('<h3>'+data.name+'</h3>'+
+			// 			'<p>'+data.mission+'</p>'+
+
+			// 			'<a target="_blank" href="' + data.website + '" >Visit Site</a>'
+			// 		);
+			// 		console.log(data);
+
+			// 	}
+			// });
 			location.reload();
 		});

@@ -1,5 +1,6 @@
 class DonationsController < ApplicationController
   before_filter :authenticate_user!
+  layout 'nofooter', :only => [:new]
 
   def new
     @donation = Donation.new
@@ -8,7 +9,7 @@ class DonationsController < ApplicationController
     @donationcount = Donation.where(charity_id: @charities.id).count
     respond_to do |format|
       format.html
-      #format.json { render :json => @charities }
+      format.json { render :json => @charities }
     end
 
   end
